@@ -23,24 +23,28 @@ function App() {
 
     return (
         <div className="App">
-            <div className="w-1/3 m-auto mt-5 flex flex-row justify-between">
-                <input type="file" id="myImage" onChange={loadImg} hidden />
-                <label for="myImage" className="mx-auto button">Upload Image</label>
-                <button className="mx-auto button" onClick={saveImage}>Download</button>
-            </div>
-            <div className="flex flex-col text-[#810000] w-1/3 m-auto border border-[#d9bfb7] bg-[#f0e0d6] rounded-md" ref={gtContainer}>
-                <div className="flex justify-between px-2 py-[2.5px] bg-[#e2d1c6] border-b border-[#d9bfb7] text-sm">
-                    <span className="text-[#117743] font-bold">Anonymous</span>
-                    <span>{new Date().toLocaleString()}</span>
-                    <span>No.{getRandomInt()}</span>
+            <div className="m-auto w-[90%] md:w-[512px]">
+                <div className="w-full mt-5 flex flex-row justify-between">
+                    <input type="file" id="myImage" onChange={loadImg} hidden />
+                    <label for="myImage" className="mx-auto button">Upload Image</label>
+                    <button className="mx-auto button" onClick={saveImage}>Download</button>
                 </div>
-                <div className="flex flex-row">
-                    <div className="flex flex-col w-1/4 p-2 border-r border-[#d9bfb7]">
-                        <span><img className="rounded-md" width="128" src={imgData.src} alt="sample" /></span>
-                        <span className="mt-2 text-center">{imgData.size} KB {imgData.type}</span>
+                <div className="flex flex-col text-[#810000] border border-[#d9bfb7] bg-[#f0e0d6] rounded-md" ref={gtContainer}>
+                    <div className="flex justify-between px-2 py-[2.5px] bg-[#e2d1c6] border-b border-[#d9bfb7] text-sm">
+                        <span className="text-[#117743] font-bold">Anonymous</span>
+                        <div className="flex flex-col md:justify-between md:flex-row md:w-2/3">
+                            <span>{new Date().toLocaleString()}</span>
+                            <span>No.{getRandomInt()}</span>
+                        </div>
                     </div>
-                    <div className="flex flex-grow w-full p-2">
-                        <SlateEditor />
+                    <div className="flex flex-col md:flex-row">
+                        <div className="flex justify-center w-full text-center flex-col md:w-1/3 p-2 border-r border-[#d9bfb7]">
+                            <span><img className="rounded-md border border-[#d9bfb7] w-[128px] h-[128px]" src={imgData.src} alt="sample" /></span>
+                            <span className="mt-2 text-center">{imgData.size} KB {imgData.type}</span>
+                        </div>
+                        <div className="flex flex-grow w-full p-2">
+                            <SlateEditor />
+                        </div>
                     </div>
                 </div>
             </div>
