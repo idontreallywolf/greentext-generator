@@ -1,6 +1,6 @@
-import SlateEditor from "../../SlateEditor";
+import SlateEditor from "../SlateEditor";
 
-const Body = ({ imgData, ...props }) => {
+const Body = ({ imgData }) => {
     return (
         <div className="flex flex-col md:flex-row">
             <div className="flex justify-center md:justify-start w-full text-center flex-col md:w-1/4 p-2 border-r border-[#d9bfb7]">
