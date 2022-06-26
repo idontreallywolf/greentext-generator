@@ -38,7 +38,7 @@ function App() {
                         </div>
                     </div>
                     <div className="flex flex-col md:flex-row">
-                        <div className="flex justify-center w-full text-center flex-col md:w-1/3 p-2 border-r border-[#d9bfb7]">
+                        <div className="flex justify-center md:justify-start w-full text-center flex-col md:w-1/3 p-2 border-r border-[#d9bfb7]">
                             <span><img className="rounded-md border border-[#d9bfb7] w-[128px] h-[128px]" src={imgData.src} alt="sample" /></span>
                             <span className="mt-2 text-center">{imgData.size} KB {imgData.type}</span>
                         </div>
